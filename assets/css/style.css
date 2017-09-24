@@ -1,6 +1,6 @@
 body {
 	margin-top: 0px;
-	background-image: url(http://freelancechristianity.com/wp-content/uploads/2017/03/the-four-horsemen.jpg);
+	background-image: url(https://thiswallpaper.com/cdn/hdwallpapers/845/amazing%20mclaren%20car%20high%20resolution%20wallpaper.jpg);
 	background-size: cover;
 	background-position: 0px 100px;
 }
@@ -12,4 +12,14 @@ align-content: center;
 }
 .panel{
 	text-align: center;
+}
+.selection{
+	font-weight: bold;
+	font-size: 18px;
+	margin-top: 10px;
+}
+#question{
+	font-weight: bold;
+	font-size: 30px;
+
 }

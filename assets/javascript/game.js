@@ -3,29 +3,29 @@ var amountWrong = 0;
 var unanswered = 0;
 var number = 0;
 var questions = [];
-var time = 5;
+var time = 20;
 
 questions[0] = {
-    question: "Where?",
-    answers: ["1", "2", "3", "4"],
+    question: "Which car won the 1966 LeMans?",
+    answers: ["Porsche 906/6L Carrera 6", "Ford GT40 Mk.II", "Ferrari 275 GTB/C", "Alpine A210"],
     correctIndex: 1,
 };
 
 questions[1] = {
-    question: "How?",
-    answers: ["1", "2", "3", "4"],
+    question: "Which of these is a Chevrolet?",
+    answers: ["Mustang", "Challenger", "Firebird", "El Camino"],
     correctIndex: 3,
 };
 
 questions[2] = {
-    question: "What?",
-    answers: ["1", "2", "3", "4"],
+    question: "Which country is Koenigsegg from?",
+    answers: ["United States", "Finland", "Sweden", "Germany"],
     correctIndex: 2,
 };
 
 questions[3] = {
-    question: "Why?",
-    answers: ["1", "2", "3", "4"],
+    question: "Softening front springs in relation to the rear reduces...",
+    answers: ["Understeer", "Oversteer"],
     correctIndex: 0,
 };
 
@@ -64,7 +64,7 @@ $(document).ready(function() {
 
     function questionsScreen() {
         timer()
-        $("#display").html("<div class='panel panel-heading'><div>Time remaining: <span id='time'>5</span></div><div id='question'></div><div id='container'></div></div>");
+        $("#display").html("<div class='panel panel-heading'><div>Time remaining: <span id='time'>20</span></div><div id='question'></div><div id='container'></div></div>");
         generateQuestion(); 
     };
 
@@ -90,7 +90,7 @@ $(document).ready(function() {
                 number++;
                 outOfTime();
                 clearInterval(questionTime);
-                time = 5;
+                time = 20;
             };
         }, 1000);
     };
@@ -114,7 +114,7 @@ $(document).ready(function() {
         actualAnswer = questions[number].answers[correctLocation];
         $("#question").html(questions[number].question);
         for (var i = 0; i < questions[number].answers.length; i++) {
-            $("#container").append("<div class='selection btn btn-lg btn-primary' data-answer-index=" + i + ">" + questions[number].answers[i] + "</div>");
+            $("#container").append("<div class='row'><div class='selection btn btn-lg btn-primary' data-answer-index=" + i + ">" + questions[number].answers[i] + "</div></div>");
         }
 
         $("#container").on("click", ".selection", function() {
@@ -125,13 +125,13 @@ $(document).ready(function() {
             if (answerIndex === correctLocation) {
                 amountCorrect++;
                 correctScreen();
-                time = 5;
+                time = 20;
 
 
             } else {
                 amountWrong++;
                 incorrectScreen();
-                time = 5;
+                time = 20;
 
             };
 
